@@ -534,7 +534,7 @@
 
 /*** Footer ***/
 .footer {
-    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/bg-2.jpg) center center no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(../img/common.png) center center no-repeat;
     background-size: cover;
 }
 
@@ -593,4 +593,36 @@
 .footer .copyright a:hover {
     color: var(--primary);
 }
+
+.contact-form1{
+text-align: center;
+background-color: #282F34;
+color: #EEEEEE;
+height: 200px;
+
+}
+
+.contact-form1 h2{
+    color: #2EB872;
+}
+
+.contact-image1 h2{
+  color: red;
+  padding-top: 30px;
+}
+
+.contact-image1{
+    text-align: center;
+}
+
+
+.send-button button{
+    align-items: center;
+    width: 100%;
+    border-radius: 10px;
+    color: #2EB872;
+    box-shadow: 5px 5px 5px #000000;
+    background-color: #2EB872;
+}
+
 
