@@ -1,8 +1,18 @@
 /********** Template CSS **********/
 :root {
+    /* Tint only - 2.56:1 on white, too light to sit behind or under text */
     --primary: #2EB872;
+    /* Text and buttons - 5.4:1 on white, passes WCAG AA */
+    --primary-strong: #127A4B;
+    --primary-darker: #0E633C;
     --light: #F3F4F5;
     --dark: #282F34;
+}
+
+/* Bootstrap paints .text-primary with the light tint; anything carrying
+   text uses the darker sibling instead. Same brand, one step deeper. */
+.text-primary {
+    color: var(--primary-strong) !important;
 }
 
 .back-to-top {
@@ -11,6 +21,13 @@
     right: 45px;
     bottom: 45px;
     z-index: 99;
+}
+
+@media (max-width: 575.98px) {
+    .back-to-top {
+        right: 20px;
+        bottom: 20px;
+    }
 }
 
 
@@ -40,6 +57,19 @@
     color: #FFFFFF;
 }
 
+.btn.btn-primary {
+    background-color: var(--primary-strong);
+    border-color: var(--primary-strong);
+}
+
+.btn.btn-primary:hover,
+.btn.btn-primary:focus,
+.btn.btn-primary:active {
+    color: #FFFFFF;
+    background-color: var(--primary-darker);
+    border-color: var(--primary-darker);
+}
+
 .btn-square {
     width: 38px;
     height: 38px;
@@ -67,9 +97,11 @@
 
 
 /*** Navbar ***/
+/* Was top: -100px, which parked the header off-screen until you had
+   scrolled 300px. It now stays put and only gains a shadow. */
 .navbar.sticky-top {
-    top: -100px;
-    transition: .5s;
+    top: 0;
+    transition: box-shadow .3s ease;
 }
 
 .navbar .navbar-brand {
@@ -91,24 +123,24 @@
 }
 
 .navbar .navbar-nav .nav-link {
-    margin-right: 30px;
+    /* 30px did not leave room for an eighth item */
+    margin-right: 18px;
     padding: 25px 0;
-    color: #FFFFFF;
     font-size: 15px;
     font-weight: 500;
     text-transform: uppercase;
-    outline: none;
 }
 
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link.active {
-    color: var(--primary);
+    color: var(--primary-strong);
 }
 
-@media (max-width: 991.98px) {
+@media (max-width: 1199.98px) {
     .navbar .navbar-nav .nav-link  {
         margin-right: 0;
-        padding: 10px 0;
+        /* 44px minimum touch target */
+        padding: 12px 0;
     }
 
     .navbar .navbar-nav {
@@ -121,7 +153,7 @@
     font-weight: 500;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
     .navbar .nav-item .dropdown-menu {
         display: block;
         border: none;
@@ -142,32 +174,63 @@
 
 
 /*** Header ***/
-.header-bg {
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(../img/volunteers1st.png) center center no-repeat;
+/* Page headers: a dark scrim keeps the white headline readable over any photo */
+.header-bg,
+.header-bg1,
+.header-bg3,
+.header-bg4,
+.header-bg5,
+.header-bg6 {
+    display: flex;
+    align-items: center;
+    min-height: 280px;
+    background-position: center center;
+    background-repeat: no-repeat;
     background-size: cover;
+}
+
+.header-bg .container,
+.header-bg1 .container,
+.header-bg3 .container,
+.header-bg4 .container,
+.header-bg5 .container,
+.header-bg6 .container {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .header-bg,
+    .header-bg1,
+    .header-bg3,
+    .header-bg4,
+    .header-bg5,
+    .header-bg6 {
+        min-height: 340px;
+    }
+}
+
+.header-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .55)), url(../img/volunteers1st.png);
 }
 
 .header-bg1 {
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(../img/img_0859.png) center center no-repeat;
-    background-size: cover;
+    background-image: linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .55)), url(../img/img_0859.png);
 }
 
 .header-bg3 {
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(../img/irula-1st.png) center center no-repeat;
-    background-size: cover;
+    background-image: linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .55)), url(../img/irula-1st.png);
 }
 
 .header-bg4 {
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(../img/about1st.png) center center no-repeat;
-    background-size: cover;
+    background-image: linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .55)), url(../img/about1st.png);
 }
-.header-bg5{
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(../img/event.jpg) center center no-repeat;
-    background-size: cover; 
+
+.header-bg5 {
+    background-image: linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .55)), url(../img/event.jpg);
 }
-.header-bg6{
-    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url(../img/house6.jpg) center center no-repeat;
-    background-size: cover; 
+
+.header-bg6 {
+    background-image: linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .55)), url(../img/house6.JPG);
 }
 .btn-play {
     position: relative;
@@ -263,14 +326,28 @@
 
 .header-carousel .owl-nav {
     position: absolute;
-    width: 300px;
-    /* width: 200px; */
+    width: calc(100% - 30px);
+    max-width: 300px;
     height: 40px;
-    bottom: 30px;
+    bottom: 70px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     justify-content: space-between;
+    pointer-events: none;
+}
+
+.header-carousel .owl-nav .owl-prev,
+.header-carousel .owl-nav .owl-next {
+    pointer-events: auto;
+}
+
+@media (min-width: 768px) {
+    .header-carousel .owl-nav {
+        width: 380px;
+        max-width: 380px;
+        bottom: 28px;
+    }
 }
 
 .header-carousel .owl-nav .owl-prev,
@@ -296,20 +373,28 @@
 .header-carousel .owl-dots {
     position: absolute;
     height: 45px;
-    bottom: 30px;
+    bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+
+@media (min-width: 768px) {
+    .header-carousel .owl-dots {
+        bottom: 30px;
+    }
 }
 
 .header-carousel .owl-dot {
     position: relative;
     display: inline-block;
     margin: 0 5px;
-    width: 15px;
-    height: 15px;
+    width: 13px;
+    height: 13px;
     background: transparent;
     border: 1px solid #FFFFFF;
     transition: .5s;
@@ -320,8 +405,8 @@
     content: "";
     width: 5px;
     height: 5px;
-    top: 4px;
-    left: 4px;
+    top: 3px;
+    left: 3px;
     background: #FFFFFF;
     border-radius: 5px;
 }
@@ -547,9 +632,10 @@
 }
 
 .footer .btn.btn-social {
-    margin-right: 5px;
-    width: 35px;
-    height: 35px;
+    margin-right: 8px;
+    /* 44px minimum touch target */
+    width: 44px;
+    height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -564,8 +650,9 @@
 
 .footer .btn.btn-link {
     display: block;
-    margin-bottom: 5px;
-    padding: 0;
+    margin-bottom: 0;
+    /* padding-block lifts the hit area to 44px without moving the text */
+    padding: 10px 0;
     text-align: left;
     color: #FFFFFF;
     font-size: 15px;
@@ -602,21 +689,27 @@
     color: var(--primary);
 }
 
-.contact-form1{
-text-align: center;
-background-color: #282F34;
-color: #EEEEEE;
-height: 200px;
-
+.contact-form1 {
+    text-align: center;
+    background-color: #282F34;
+    color: #EEEEEE;
+    padding: 40px 20px;
 }
 
-.contact-form1 h2{
-    color: #2EB872;
+.contact-form1 p {
+    max-width: 720px;
+    margin: 0 auto;
 }
 
-.contact-image1 h2{
-  color: red;
-  padding-top: 30px;
+.contact-form1 h2 {
+    color: var(--primary);
+}
+
+/* Was pure red - 4:1 on white, and red reads as an error state.
+   The logo mark carries the colour instead. */
+.contact-image1 h2 {
+    color: var(--dark);
+    padding-top: 30px;
 }
 
 .contact-image1{
@@ -624,25 +717,841 @@ height: 200px;
 }
 
 
-.send-button button{
-    align-items: center;
+.send-button button.form-control {
     width: 100%;
+    height: auto;
+    padding: 12px 20px;
+    border: none;
     border-radius: 10px;
-    color: #2EB872;
-    box-shadow: 5px 5px 5px #000000;
-    background-color: #2EB872;
+    color: #FFFFFF;
+    font-weight: 600;
+    background-color: var(--primary-strong);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .25);
+    transition: .3s;
 }
 
-.table{
-    height: 100vh;
-    border: 5px solid #2EB872;
+.send-button button.form-control:hover,
+.send-button button.form-control:focus {
+    color: #FFFFFF;
+    background-color: var(--primary-darker);
+}
+
+/*** Contact details table (scoped so it can't override Bootstrap's global .table) ***/
+.tableNew {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.tableNew .table {
     width: 100%;
-    height: 85%;
+    margin-bottom: 0;
+    border: 3px solid var(--primary);
+    vertical-align: middle;
+}
+
+.tableNew .table td {
+    padding: 12px 16px;
+    word-break: break-word;
+}
+
+.tableNew .table tr td:first-child {
+    width: 34%;
+    min-width: 130px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+@media (max-width: 575.98px) {
+    .tableNew .table td {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+}
+
+
+
+
+/*** Content pages: readable measure, responsive media ***/
+.page-content {
+    max-width: 900px;
+}
+
+.page-content p,
+.page-content h3 {
+    text-align: left;
+}
+
+.page-content h3 {
+    margin-top: 2rem;
+    margin-bottom: .75rem;
+    color: var(--dark);
+}
+
+/* Every inline image stays inside its column instead of forcing a sideways scroll */
+.page-content img,
+.content-img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto 1.5rem auto;
+}
+
+.lang-switch {
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+}
+
+
+/*** Gallery grid ***/
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 12px;
+}
+
+@media (min-width: 576px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 992px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.gallery-grid img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background: var(--light);
+    border-radius: 4px;
+    transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .18);
+}
+
+
+/*** Project galleries ***/
+.project-section {
+    margin-bottom: 3rem;
+}
+
+.project-section h2 {
+    margin-bottom: 1.5rem;
+    padding-bottom: .5rem;
+    border-bottom: 2px solid var(--primary);
+    font-size: calc(1.3rem + .9vw);
+}
+
+.project-section img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background: var(--light);
+    border-radius: 4px;
+}
+
+
+/*** Navbar brand keeps its baseline on small screens ***/
+.navbar .navbar-brand h1 {
+    font-size: 1.5rem;
+    line-height: 1.2;
+}
+
+@media (min-width: 768px) {
+    .navbar .navbar-brand h1 {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .navbar .navbar-nav .dropdown-menu {
+        border: none;
+        padding-left: 1rem;
+    }
+}
+
+
+/*** Visible keyboard focus ***/
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+.btn:focus-visible {
+    outline: 3px solid var(--primary-strong);
+    outline-offset: 2px;
+}
+
+
+/*** Contact form ***/
+.contact .form-label {
+    font-weight: 500;
+}
+
+.contact h2 {
+    font-size: calc(1.15rem + .6vw);
+    line-height: 1.4;
+}
+
+
+/*** Home carousel: every slide keeps the same frame so the page never jumps ***/
+.header-carousel .owl-carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.header-carousel .owl-carousel-item {
+    height: 45vh;
+    min-height: 260px;
+}
+
+@media (min-width: 768px) {
+    .header-carousel .owl-carousel-item {
+        height: 60vh;
+        min-height: 380px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .header-carousel .owl-carousel-item {
+        height: 70vh;
+        max-height: 640px;
+    }
+}
+
+
+/*** Wordmark ***/
+/* Was <h1 class="text-danger"> - a second h1 on every page, in a red that
+   matches neither the amber/violet logo nor the green accent. */
+.navbar .navbar-brand .navbar-title {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--dark);
+}
+
+@media (min-width: 768px) {
+    .navbar .navbar-brand .navbar-title {
+        font-size: 1.75rem;
+    }
+}
+
+
+/*** Contact page banner ***/
+.contact-form1 h1 {
+    font-size: calc(1.4rem + 1.2vw);
+    color: var(--primary);
+    margin-bottom: .5rem;
+}
+
+
+/*** Content transcribed out of image panels ***/
+
+.lead-in {
+    font-size: 1.15rem;
+    line-height: 1.55;
+    color: var(--dark);
+    margin-bottom: 2rem;
+}
+
+.outcome {
+    margin-top: 2.5rem;
+    padding: 1.25rem 1.5rem;
+    background: rgba(46, 184, 114, .1);
+    border-left: 4px solid var(--primary-strong);
+    font-size: 1.05rem;
+    color: var(--dark);
+}
+
+/* Volunteers - "you can help in these areas" */
+.help-grid {
+    list-style: none;
+    margin: 0 0 1rem;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+}
+
+@media (min-width: 576px) {
+    .help-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 992px) {
+    .help-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.help-card {
+    padding: 1.35rem 1.4rem;
+    background: var(--light);
+    border-top: 3px solid var(--primary-strong);
+}
+
+.help-card p {
+    margin: 0;
+    font-size: .9375rem;
+    line-height: 1.6;
+}
+
+/* Irula key facts / history - text beside its photograph */
+.fact-panel {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    align-items: start;
+}
+
+@media (min-width: 768px) {
+    .fact-panel { grid-template-columns: 300px 1fr; gap: 2rem; }
+    .fact-panel.reversed { grid-template-columns: 1fr 300px; }
+    .fact-panel.reversed .fact-photo { order: 2; }
+    .fact-panel.reversed .fact-body { order: 1; }
+}
+
+.fact-photo { margin: 0; }
+
+.fact-photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: var(--light);
+}
+
+.fact-body h2 {
+    margin: 0 0 1rem;
+    padding-bottom: .5rem;
+    font-size: calc(1.2rem + .5vw);
+    color: var(--dark);
+    border-bottom: 2px solid var(--primary-strong);
+}
+
+.fact-body p { margin-bottom: 1rem; }
+.fact-body p:last-child { margin-bottom: 0; }
+
+/* Main problems of the tribe */
+.problems { margin-bottom: 2rem; }
+
+.problems h2 {
+    margin: 0 0 1.25rem;
+    padding-bottom: .5rem;
+    font-size: calc(1.2rem + .5vw);
+    color: var(--dark);
+    border-bottom: 2px solid var(--primary-strong);
+}
+
+.problems dl { margin: 0; }
+
+.problems dt {
+    font-weight: 700;
+    color: var(--dark);
+    margin-top: 1.1rem;
+}
+
+.problems dt:first-child { margin-top: 0; }
+
+.problems dd {
+    margin: .2rem 0 0;
+    padding-left: 0;
+}
+
+@media (min-width: 768px) {
+    .problems dl {
+        display: grid;
+        grid-template-columns: 12rem 1fr;
+        column-gap: 1.5rem;
+    }
+    .problems dt { margin-top: 0; padding-top: .9rem; }
+    .problems dd { padding-top: .9rem; border-top: 1px solid #E4E7E4; }
+    .problems dt { border-top: 1px solid #E4E7E4; }
+    .problems dt:first-of-type,
+    .problems dt:first-of-type + dd { border-top: none; padding-top: 0; }
+}
+
+/* Who are we - the team */
+.team { margin: 2.5rem 0; }
+
+.team h2 {
+    margin: 0 0 1.25rem;
+    font-size: calc(1.2rem + .5vw);
+    color: var(--dark);
+}
+
+.team-list {
+    list-style: none;
+    margin: 0 0 1.25rem;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .75rem;
+}
+
+@media (min-width: 576px) {
+    .team-list { grid-template-columns: repeat(3, 1fr); }
+}
+
+.team-list li {
+    padding: 1.1rem 1.25rem;
+    background: var(--light);
+    border-left: 3px solid var(--primary-strong);
+}
+
+.team-name {
+    display: block;
+    font-weight: 700;
+    color: var(--dark);
+    font-size: 1.05rem;
+}
+
+.team-role {
+    display: block;
+    font-size: .875rem;
+    color: #55606B;
+}
+
+.team-vols { margin: 0; font-size: .9375rem; }
+
+.team-vols-label { font-weight: 600; color: var(--dark); }
+
+
+/*** Home page ***/
+.section-eyebrow {
+    font-weight: 500;
+    letter-spacing: .02em;
+    margin-bottom: .75rem;
+}
+
+.section-heading {
+    font-size: calc(1.3rem + .8vw);
+    color: var(--dark);
+    margin-bottom: 2rem;
+}
+
+/* What we have achieved */
+.impact-grid {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: #E4E7E4;
+    border: 1px solid #E4E7E4;
+}
+
+@media (min-width: 768px) {
+    .impact-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.impact-grid li {
+    background: #FFFFFF;
+    padding: 1.75rem 1.25rem;
+    text-align: center;
+}
+
+.impact-n {
+    display: block;
+    font-family: 'Quicksand', sans-serif;
+    font-size: calc(1.75rem + 1.2vw);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--primary-strong);
+    margin-bottom: .5rem;
+}
+
+.impact-l {
+    display: block;
+    font-size: .9375rem;
+    line-height: 1.45;
+}
+
+/* What we do */
+.programme-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: var(--light);
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.programme-card:hover,
+.programme-card:focus-visible {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, .14);
+}
+
+.programme-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.programme-body {
+    display: block;
+    padding: 1.25rem 1.4rem 1.5rem;
+}
+
+.programme-title {
+    display: block;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: .4rem;
+}
+
+.programme-card:hover .programme-title,
+.programme-card:focus-visible .programme-title {
+    color: var(--primary-strong);
+}
+
+.programme-text {
+    display: block;
+    font-size: .9375rem;
+    line-height: 1.6;
+}
+
+/* Call to action */
+.cta-band {
+    background: var(--dark);
+    color: var(--light);
+}
+
+.cta-band h2 {
+    color: #FFFFFF;
+    font-size: calc(1.3rem + .8vw);
+}
+
+.cta-band p {
+    max-width: 42rem;
+    margin-inline: auto;
+}
+
+.cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.btn-outline-cta {
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, .55);
+    background: transparent;
+    transition: .3s;
+}
+
+.btn-outline-cta:hover,
+.btn-outline-cta:focus {
+    color: var(--dark);
+    background: #FFFFFF;
+    border-color: #FFFFFF;
+}
+
+
+/*** Gallery and project tiles are now lightbox links ***/
+.gallery-grid a,
+.project-section a {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-grid a::after,
+.project-section a::after {
+    content: "\f00e";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    font-size: 1.5rem;
+    color: #FFFFFF;
+    background: rgba(18, 122, 75, .55);
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.gallery-grid a:hover::after,
+.gallery-grid a:focus-visible::after,
+.project-section a:hover::after,
+.project-section a:focus-visible::after {
+    opacity: 1;
+}
+
+.project-blurb {
+    max-width: 46rem;
+    margin-top: -.5rem;
+    margin-bottom: 1.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gallery-grid img,
+    .programme-card {
+        transition: none;
+    }
+    .gallery-grid img:hover {
+        transform: none;
+    }
+    .programme-card:hover {
+        transform: none;
+    }
 }
 
 
+/* "Ways to help" cards are page sections; keep the compact card size */
+.help-card h2 {
+    margin: 0 0 .6rem;
+    font-size: 1.05rem;
+    line-height: 1.3;
+    color: var(--dark);
+}
+
+
+/*** Type scale and vertical rhythm ***/
+/* Five steps. Headings use only these, so sizes relate to each other
+   instead of landing wherever Bootstrap's defaults happened to fall. */
+:root {
+    --step--1: .875rem;
+    --step-0:  1rem;
+    --step-1:  1.125rem;
+    --step-2:  1.375rem;
+    --step-3:  clamp(1.5rem, 1.15rem + 1.2vw, 2rem);
+    --step-4:  clamp(1.9rem, 1.35rem + 2.2vw, 3rem);
+
+    /* One section-spacing value, used everywhere */
+    --section-y: clamp(3rem, 5vw, 4.5rem);
+}
+
+body {
+    font-size: var(--step-0);
+    /* was 1.5 - too tight for the multi-paragraph Activities pages */
+    line-height: 1.65;
+}
+
+h1, h2, h3, h4, h5, h6,
+.display-1, .display-2, .display-3, .display-4, .display-5 {
+    text-wrap: balance;
+}
+
+.display-4 { font-size: var(--step-4); }
+.display-5 { font-size: var(--step-4); }
+
+.page-content h2,
+.fact-body h2,
+.problems h2,
+.team h2,
+.section-heading,
+.project-section h2 {
+    font-size: var(--step-3);
+}
+
+.help-card h2,
+.programme-title {
+    font-size: var(--step-1);
+}
+
+.lead-in {
+    font-size: var(--step-1);
+}
+
+.footer h2.h5 {
+    font-size: var(--step-1);
+}
+
+/* Bootstrap's spacing utilities carry !important, so the shared section
+   rhythm has to match that weight to apply. */
+.container-xxl.py-5 {
+    padding-top: var(--section-y) !important;
+    padding-bottom: var(--section-y) !important;
+}
+
+.container-xxl.pb-5 {
+    padding-bottom: var(--section-y) !important;
+}
+
+
+/*** Carousel pause / play ***/
+.carousel-toggle {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    z-index: 3;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    color: #FFFFFF;
+    background: rgba(0, 0, 0, .5);
+    border: 1px solid rgba(255, 255, 255, .7);
+    transition: background .3s ease;
+}
+
+.carousel-toggle:hover,
+.carousel-toggle:focus-visible {
+    background: var(--primary-strong);
+}
+
+.container-fluid.bg-success.p-0 {
+    position: relative;
+}
+
+
+/*** Language toggle ***/
+.lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+    margin-left: 30px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.lang-toggle a,
+.lang-toggle span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0 .4rem;
+    text-decoration: none;
+    color: var(--dark);
+}
+
+.lang-toggle a:hover {
+    color: var(--primary-strong);
+}
+
+.lang-toggle .is-current {
+    color: var(--primary-strong);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+@media (max-width: 1199.98px) {
+    .lang-toggle {
+        margin-left: 0;
+        border-top: 1px solid #EEEEEE;
+        padding-top: .5rem;
+    }
+    .lang-toggle a,
+    .lang-toggle span {
+        justify-content: flex-start;
+        padding-left: 0;
+    }
+}
+
+
+/*** Contact page: reaching us vs. supporting us ***/
+.contact-panels {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+}
+
+@media (min-width: 992px) {
+    .contact-panels {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+}
+
+.contact-panel h2 {
+    font-size: var(--step-2);
+    color: var(--dark);
+    margin-bottom: .75rem;
+    padding-bottom: .5rem;
+    border-bottom: 2px solid var(--primary-strong);
+}
+
+.contact-panel .panel-note {
+    font-size: var(--step--1);
+    margin-bottom: 1rem;
+}
+
+.contact-panel .tableNew {
+    padding: 0;
+    max-width: none;
+}
+
+.contact-panel .table a {
+    color: var(--primary-strong);
+}
+
+
+/*** Remaining touch targets ***/
+/* Hamburger was 56x40 */
+.navbar-toggler {
+    min-width: 48px;
+    min-height: 48px;
+}
+
+/* Contact table links: grow the hit area to fill the cell without
+   changing the row height. */
+.contact-panel .table a {
+    display: block;
+    padding-block: 13px;
+    margin-block: -13px;
+}
+
+/* Page headers for the Resources and Donate pages */
+.header-bg7,
+.header-bg8 {
+    display: flex;
+    align-items: center;
+    min-height: 280px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.header-bg7 .container,
+.header-bg8 .container {
+    width: 100%;
+}
+
+@media (min-width: 768px) {
+    .header-bg7,
+    .header-bg8 {
+        min-height: 340px;
+    }
+}
+
+.header-bg7 {
+    background-image: linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .55)), url(../img/index/img9.jpg);
+}
+
+.header-bg8 {
+    background-image: linear-gradient(rgba(0, 0, 0, .55), rgba(0, 0, 0, .55)), url(../img/index/img8.jpg);
+}

@@ -3,11 +3,25 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Enlight Mission - Volunteers</title>
+  <title>Volunteer &ndash; Enlight Mission</title>
   <link rel="icon" href="img/logo.jpeg" type="image">
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <meta content="" name="keywords" />
-  <meta content="" name="description" />
+  <meta content="Enlight Mission, Irulight, NGO, Tamil Nadu, Irula, tribal development, women empowerment, Villupuram" name="keywords" />
+  <meta content="Nine ways to support Enlight Mission as a volunteer, from teaching and administration to video, social media and fundraising." name="description" />
+
+  <!-- Link previews (Facebook, WhatsApp, LinkedIn).
+       og:image must be an absolute URL once the site has a domain:
+       prefix these paths with https://your-domain/ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Enlight Mission" />
+  <meta property="og:title" content="Volunteer &ndash; Enlight Mission" />
+  <meta property="og:description" content="Nine ways to support Enlight Mission as a volunteer, from teaching and administration to video, social media and fundraising." />
+  <meta property="og:image" content="img/thumb/gal3.JPG" />
+  <meta property="og:url" content="volunteers.html" />
+  <meta property="og:locale" content="en_GB" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" hreflang="fr" href="volontaires.html" />
+  <link rel="alternate" hreflang="en" href="volunteers.html" />
 
   <!-- Favicon -->
   <!-- <link href="img/favicon.ico" rel="icon" /> -->
@@ -17,6 +31,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Quicksand:wght@600;700&display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap"
     rel="stylesheet" />
 
   <!-- Icon Font Stylesheet -->
@@ -33,6 +50,14 @@
 
   <!-- Template Stylesheet -->
   <link href="css/style.css" rel="stylesheet" />
+
+  <!-- Redesign layer. Loads last; remove this one line to revert. -->
+  <link href="css/design.css" rel="stylesheet" />
+
+  <!-- If scripts fail, don't leave the loading overlay covering the page -->
+  <noscript>
+    <style>#spinner { display: none !important; }</style>
+  </noscript>
 </head>
 
 <body>
@@ -45,34 +70,53 @@
   </div>
   <!-- Spinner End -->
 
+  <script>
+    // Clear the loading overlay without waiting for jQuery. If a CDN script
+    // fails, main.js never runs and the overlay would otherwise cover the page.
+    (function () {
+      function clear() {
+        var s = document.getElementById('spinner');
+        if (s) { s.className = s.className.replace(/\bshow\b/, ''); }
+      }
+      document.addEventListener('DOMContentLoaded', clear);
+      window.addEventListener('load', clear);
+      setTimeout(clear, 3000);
+    })();
+  </script>
+
 
 
   <!-- Navbar Start -->
-  <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-lg-0 px-4 px-lg-5 wow fadeIn"
+  <nav class="navbar navbar-expand-xl bg-white navbar-light sticky-top py-xl-0 px-4 px-xl-5 wow fadeIn"
     data-wow-delay="0.1s">
     <a href="index.html" class="navbar-brand p-0">
-      <img class="img-fluid me-3" src="img/logo.jpeg" alt="Icon" />
-      <h1 class="m-0 text-danger">Enlight Mission</h1>
+      <img class="img-fluid me-3" src="img/logo.jpeg" alt="Enlight Mission logo" />
+      <span class="navbar-title m-0">Enlight Mission</span>
     </a>
     <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse py-4 py-lg-0" id="navbarCollapse">
+    <div class="collapse navbar-collapse py-4 py-xl-0" id="navbarCollapse">
       <div class="navbar-nav ms-auto">
         <a href="index.html" class="nav-item nav-link">Home</a>
-        <a href="about.html" class="nav-item nav-link">About</a>
-        <a href="volunteers.html" class="nav-item nav-link active">Volunteers</a>
+        <a href="about.html" class="nav-item nav-link">About Us</a>
         <div class="nav-item dropdown">
-          <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Activities</a>
+          <a href="projects.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Our Work &amp; Projects</a>
           <div class="dropdown-menu rounded-0 rounded-bottom m-0">
-            <a href="empowering-women.html" class="dropdown-item">Empowering and Enlighting Women</a>
-            <a href="irula-tribes-development.html" class="dropdown-item">Irula Tripes Developement</a>
-            
+            <a href="projects.html" class="dropdown-item">All Projects</a>
+            <a href="empowering-women.html" class="dropdown-item">Empowering and Enlightening Women</a>
+            <a href="irula-tribes-development.html" class="dropdown-item">Irula Tribes Development</a>
           </div>
         </div>
-        <a href="projects.html" class="nav-item nav-link">Projects</a>
+        <a href="resources.html" class="nav-item nav-link">Resources</a>
+        <a href="volunteers.html" class="nav-item nav-link active">Volunteer</a>
+        <a href="donate.html" class="nav-item nav-link">Donate</a>
         <a href="gallery.html" class="nav-item nav-link">Gallery</a>
         <a href="contact.html" class="nav-item nav-link">Contact</a>
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <span class="is-current" aria-current="true" lang="en">EN</span>
+          <a href="volontaires.html" lang="fr">FR</a>
+        </div>
       </div>
     </div>
   </nav>
@@ -86,29 +130,124 @@
     >
       <div class="container py-5">
         <h1 class="display-4 text-white mb-3 animated slideInDown">
-            Volunteers
+            Volunteer
         </h1>
       </div>
     </div>
     <!-- Page Header End -->
 
-    <!-- Page en français link -->
-    <div class="container-xxl py-5">
-      <div class="container">
-        <div
-          class="row g-5 mb-5 align-items-end wow fadeInUp"
-          data-wow-delay="0.1s"
-        >
-          <div class="col-lg-6">
-            <p><span class="text-primary me-2">#</span> <a href="volontaires.html"> Page en français</a></p>
-         </div>
-         <div>
-            <img src="img/volunteers-idea.png"
-         </div>
-         <!-- Page en français link -->
-          
-   
-    <!-- Back to Top -->
+  <!-- Page Content Start -->
+  <div class="container-xxl py-5">
+    <div class="container">
+      <div class="row justify-content-center wow fadeInUp" data-wow-delay="0.1s">
+        <div class="col-12 col-lg-10 page-content">
+          <p class="lang-switch"><span class="text-primary me-2">#</span><a href="volontaires.html">Page en français</a></p>
+          <p class="lead-in">Volontees are more  than welcome. You can share your ideas and support Irulight Assotiation in many areas</p>
+          <ul class="help-grid">
+            <li class="help-card">
+              <h2>Share your ideas</h2>
+              <p>Find your area of interest, develop your passion by your work for Assotiation and grow together with us!</p>
+            </li>
+            <li class="help-card">
+              <h2>Financial support</h2>
+              <p>What we do, we do from our hearts. Social work is not business, but sometimes we need to collect some money to be able to still support Irulas. Your donation is ore then appreciated. Please share our needs with your friends!</p>
+            </li>
+            <li class="help-card">
+              <h2>Administration</h2>
+              <p>Like every organisation we have to manage documents, papers, registration books and software files — we need some well-organised people to help us with that!</p>
+            </li>
+            <li class="help-card">
+              <h2>Social network</h2>
+              <p>Tell your friends about Irulight, show your work in your counrty and help us to encourage new volunteers to work with us!</p>
+            </li>
+            <li class="help-card">
+              <h2>Social media</h2>
+              <p>Facebook, Instagram, YouTube, Crowdfounfing, WWW — support us in showing us to the world!</p>
+            </li>
+            <li class="help-card">
+              <h2>Video</h2>
+              <p>Show the life of the tribe using your creativity! Support us in creating our YouTube channel.</p>
+            </li>
+            <li class="help-card">
+              <h2>Wordpress</h2>
+              <p>Help us in promotion og our mission by creating website of our Assotiation!</p>
+            </li>
+            <li class="help-card">
+              <h2>Acknowledge tribes</h2>
+              <p>You can help us Show the life of the tribe using your creativity! knowing more about the Irula’s, by going to the village and gather informations about them, e.g: the number of people in the village, what do they like to do or would like to do in the future in their life, what they need, and problems they are facing.</p>
+            </li>
+            <li class="help-card">
+              <h2>Teaching</h2>
+              <p>You can teach your skills to other people working in the Association or in schools nearby. It can be in informatics, any social idea, or any ideas for how to make an association something great!</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Page Content End -->
+
+  <!-- Footer Start -->
+  <div class="container-fluid footer bg-dark text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+      <div class="row g-5">
+        <div class="col-lg-3 col-md-6">
+          <h2 class="h5 text-light mb-4">Address</h2>
+          <p class="mb-2">
+            <i class="fa fa-map-marker-alt me-3"></i>No1/118, Agragaram st., Aalampoondi, Villupuram
+          </p>
+          <p class="mb-2">
+            <i class="fa fa-phone-alt me-3"></i>+91 9442286290
+          </p>
+          <p class="mb-2">
+            <i class="fa fa-envelope me-3"></i>irulightassociation@gmail.com
+          </p>
+          <div class="d-flex pt-2">
+            <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/irulightassociation"
+              target="_blank" rel="noopener" aria-label="Enlight Mission on Facebook"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h2 class="h5 text-light mb-4">Quick Links</h2>
+          <a class="btn btn-link" href="index.html">Home</a>
+          <a class="btn btn-link" href="about.html">About Us</a>
+          <a class="btn btn-link" href="projects.html">Our Work &amp; Projects</a>
+          <a class="btn btn-link" href="volunteers.html">Volunteer</a>
+          <a class="btn btn-link" href="contact.html">Contact Us</a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h2 class="h5 text-light mb-4">Popular Links</h2>
+          <a class="btn btn-link" href="resources.html">Resources</a>
+          <a class="btn btn-link" href="donate.html">Donate</a>
+          <a class="btn btn-link" href="gallery.html">Gallery</a>
+          <a class="btn btn-link" href="donate.html">Support our work</a>
+          <a class="btn btn-link" href="empowering-women.html">Empowering Women</a>
+          <a class="btn btn-link" href="irula-tribes-development.html">Irula Tribes Development</a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h2 class="h5 text-light mb-4">Enlight Mission</h2>
+          <p>--Small is beautiful--</p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="copyright">
+        <div class="row">
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+            &copy; <a class="border-bottom" href="index.html">Enlight Mission</a>, All
+            Right Reserved.
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            Designed By
+            <a class="border-bottom" href="https://velstechnologies.in" target="_blank" rel="noopener">Vels Technologies</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer End -->
+
+  <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"
       ><i class="bi bi-arrow-up"></i
     ></a>
@@ -118,8 +257,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/wow/wow.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
 

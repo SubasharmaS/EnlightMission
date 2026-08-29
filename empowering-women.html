@@ -3,11 +3,25 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Empowering and Enlighting Women</title>
+  <title>Empowering and Enlightening Women &ndash; Enlight Mission</title>
   <link rel="icon" href="img/logo.jpeg" type="image">
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <meta content="" name="keywords" />
-  <meta content="" name="description" />
+  <meta content="Enlight Mission, Irulight, NGO, Tamil Nadu, Irula, tribal development, women empowerment, Villupuram" name="keywords" />
+  <meta content="Tailoring courses at the Rakhi Community College in Alampoondi, giving women the skills to earn their own income." name="description" />
+
+  <!-- Link previews (Facebook, WhatsApp, LinkedIn).
+       og:image must be an absolute URL once the site has a domain:
+       prefix these paths with https://your-domain/ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Enlight Mission" />
+  <meta property="og:title" content="Empowering and Enlightening Women &ndash; Enlight Mission" />
+  <meta property="og:description" content="Tailoring courses at the Rakhi Community College in Alampoondi, giving women the skills to earn their own income." />
+  <meta property="og:image" content="img/thumb/gal2.JPG" />
+  <meta property="og:url" content="empowering-women.html" />
+  <meta property="og:locale" content="en_GB" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" hreflang="fr" href="empowering-women-fr.html" />
+  <link rel="alternate" hreflang="en" href="empowering-women.html" />
 
   <!-- Favicon -->
   <!-- <link href="img/favicon.ico" rel="icon" /> -->
@@ -17,6 +31,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Quicksand:wght@600;700&display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap"
     rel="stylesheet" />
 
   <!-- Icon Font Stylesheet -->
@@ -33,6 +50,14 @@
 
   <!-- Template Stylesheet -->
   <link href="css/style.css" rel="stylesheet" />
+
+  <!-- Redesign layer. Loads last; remove this one line to revert. -->
+  <link href="css/design.css" rel="stylesheet" />
+
+  <!-- If scripts fail, don't leave the loading overlay covering the page -->
+  <noscript>
+    <style>#spinner { display: none !important; }</style>
+  </noscript>
 </head>
 
 <body>
@@ -45,34 +70,53 @@
   </div>
   <!-- Spinner End -->
 
+  <script>
+    // Clear the loading overlay without waiting for jQuery. If a CDN script
+    // fails, main.js never runs and the overlay would otherwise cover the page.
+    (function () {
+      function clear() {
+        var s = document.getElementById('spinner');
+        if (s) { s.className = s.className.replace(/\bshow\b/, ''); }
+      }
+      document.addEventListener('DOMContentLoaded', clear);
+      window.addEventListener('load', clear);
+      setTimeout(clear, 3000);
+    })();
+  </script>
+
 
 
   <!-- Navbar Start -->
-  <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-lg-0 px-4 px-lg-5 wow fadeIn"
+  <nav class="navbar navbar-expand-xl bg-white navbar-light sticky-top py-xl-0 px-4 px-xl-5 wow fadeIn"
     data-wow-delay="0.1s">
     <a href="index.html" class="navbar-brand p-0">
-      <img class="img-fluid me-3" src="img/logo.jpeg" alt="Icon" />
-      <h1 class="m-0 text-danger">Enlight Mission</h1>
+      <img class="img-fluid me-3" src="img/logo.jpeg" alt="Enlight Mission logo" />
+      <span class="navbar-title m-0">Enlight Mission</span>
     </a>
     <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse py-4 py-lg-0" id="navbarCollapse">
+    <div class="collapse navbar-collapse py-4 py-xl-0" id="navbarCollapse">
       <div class="navbar-nav ms-auto">
         <a href="index.html" class="nav-item nav-link">Home</a>
-        <a href="about.html" class="nav-item nav-link">About</a>
-        <a href="volunteers.html" class="nav-item nav-link">Volunteers</a>
+        <a href="about.html" class="nav-item nav-link">About Us</a>
         <div class="nav-item dropdown">
-          <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Activities</a>
+          <a href="projects.html" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Our Work &amp; Projects</a>
           <div class="dropdown-menu rounded-0 rounded-bottom m-0">
-            <a href="empowering-women.html" class="dropdown-item">Empowering and Enlighting Women</a>
-            <a href="irula-tribes-development.html" class="dropdown-item">Irula Tripes Developement</a>
-
+            <a href="projects.html" class="dropdown-item">All Projects</a>
+            <a href="empowering-women.html" class="dropdown-item">Empowering and Enlightening Women</a>
+            <a href="irula-tribes-development.html" class="dropdown-item">Irula Tribes Development</a>
           </div>
         </div>
-        <a href="projects.html" class="nav-item nav-link">Projects</a>
+        <a href="resources.html" class="nav-item nav-link">Resources</a>
+        <a href="volunteers.html" class="nav-item nav-link">Volunteer</a>
+        <a href="donate.html" class="nav-item nav-link">Donate</a>
         <a href="gallery.html" class="nav-item nav-link">Gallery</a>
         <a href="contact.html" class="nav-item nav-link">Contact</a>
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <span class="is-current" aria-current="true" lang="en">EN</span>
+          <a href="empowering-women-fr.html" lang="fr">FR</a>
+        </div>
       </div>
     </div>
   </nav>
@@ -82,7 +126,7 @@
   <div class="container-fluid header-bg1 py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
     <div class="container py-5">
       <h1 class="display-4 text-white mb-3 animated slideInDown">
-        Empowering and Enlighting women
+        Empowering and Enlightening Women
       </h1>
 
     </div>
@@ -90,47 +134,121 @@
 
   <!-- Header End -->
 
-  <!-- Page en français link -->
+  <!-- Page Content Start -->
   <div class="container-xxl py-5">
     <div class="container">
-      <div class="row g-5 mb-5 align-items-end wow fadeInUp" data-wow-delay="0.1s">
-        <div class="col-lg-6">
-          <p><span class="text-primary me-2">#</span> <a href="empowering-women-fr.html"> Page en français</a></p>
-        </div>
-        <div>
+      <div class="row justify-content-center wow fadeInUp" data-wow-delay="0.1s">
+        <div class="col-12 col-lg-10 page-content">
+          <p class="lang-switch"><span class="text-primary me-2">#</span><a href="empowering-women-fr.html">Page en français</a></p>
           <p>
             The Rakhi Community College welcomes tailoring courses for women every day since April 2016 in Alampoondi.
             For that, Enlight Mission provides few sewing machines with the help of the Rakhi Foundation. Each day, you
-            can see a group of women learning how to sew !<br>
-            <br> All these women are learning thanks to Fatima who once was a Community college teacher. Today she has
+            can see a group of women learning how to sew !
+          </p>
+          <p>
+            All these women are learning thanks to Fatima who once was a Community college teacher. Today she has
             taught tailoring to nearly 100 students with Enlight Mission since the tailoring program started. Actually,
             nearly 45 students follow the tailoring program, which last between 6 months and one year for each women.
-            When it started, they were only 4 students…<br>
-            <br> Moreover, Dominique intervenes sometimes to learn embroidery to the students.<br>
-            <br> For instance, women can make blouses, shirts, skirts, napkins… And they can keep them for themselves,
+            When it started, they were only 4 students…
+          </p>
+          <p>
+            Moreover, Dominique intervenes sometimes to learn embroidery to the students.
+          </p>
+          <p>
+            For instance, women can make blouses, shirts, skirts, napkins… And they can keep them for themselves,
             offer them to their family, or even sell them. Indeed, after studying for a year they can make professional
-            clothes and even get hired in a little factory !<br>
-            <br> Women of all ages can come. It provides them skills to be able to earn their own money and be less
-            dependent of their husband. Moreover it provides them an activity out of their home.<br>
-            <br> But the benefits don’t stop there ! When the women finish their day at the Rakhi Community College,
+            clothes and even get hired in a little factory !
+          </p>
+          <p>
+            Women of all ages can come. It provides them skills to be able to earn their own money and be less
+            dependent of their husband. Moreover it provides them an activity out of their home.
+          </p>
+          <p>
+            But the benefits don’t stop there ! When the women finish their day at the Rakhi Community College,
             they can rent one of the sewing machines to teach to others at home. Therefore, the skills are spread among
-            women.<br>
-            <br> This is one of the way the Enlight Mission choose to contribute to women empowerment.<br>
+            women.
+          </p>
+          <p>
+            This is one of the way the Enlight Mission choose to contribute to women empowerment.
+          </p>
 
-            <br>
-          <h3>Challenges</h3>
-
-          <br> The next step in this program evolution is to provide enough place and material so the women can take
-          care of their children while following the courses. Indeed, the Enlight Mission thinks it will motivate more
-          women to join the community.<br>
-          <br> Moreover they are still administration papers to complete in order to have the status of a Community
-          College.<br>
+          <h2>Challenges</h2>
+          <p>
+            The next step in this program evolution is to provide enough place and material so the women can take
+            care of their children while following the courses. Indeed, the Enlight Mission thinks it will motivate more
+            women to join the community.
+          </p>
+          <p>
+            Moreover they are still administration papers to complete in order to have the status of a Community
+            College.
           </p>
         </div>
-        <!-- Page en français link -->
+      </div>
+    </div>
+  </div>
+  <!-- Page Content End -->
 
+  <!-- Footer Start -->
+  <div class="container-fluid footer bg-dark text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+      <div class="row g-5">
+        <div class="col-lg-3 col-md-6">
+          <h2 class="h5 text-light mb-4">Address</h2>
+          <p class="mb-2">
+            <i class="fa fa-map-marker-alt me-3"></i>No1/118, Agragaram st., Aalampoondi, Villupuram
+          </p>
+          <p class="mb-2">
+            <i class="fa fa-phone-alt me-3"></i>+91 9442286290
+          </p>
+          <p class="mb-2">
+            <i class="fa fa-envelope me-3"></i>irulightassociation@gmail.com
+          </p>
+          <div class="d-flex pt-2">
+            <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/irulightassociation"
+              target="_blank" rel="noopener" aria-label="Enlight Mission on Facebook"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h2 class="h5 text-light mb-4">Quick Links</h2>
+          <a class="btn btn-link" href="index.html">Home</a>
+          <a class="btn btn-link" href="about.html">About Us</a>
+          <a class="btn btn-link" href="projects.html">Our Work &amp; Projects</a>
+          <a class="btn btn-link" href="volunteers.html">Volunteer</a>
+          <a class="btn btn-link" href="contact.html">Contact Us</a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h2 class="h5 text-light mb-4">Popular Links</h2>
+          <a class="btn btn-link" href="resources.html">Resources</a>
+          <a class="btn btn-link" href="donate.html">Donate</a>
+          <a class="btn btn-link" href="gallery.html">Gallery</a>
+          <a class="btn btn-link" href="donate.html">Support our work</a>
+          <a class="btn btn-link" href="empowering-women.html">Empowering Women</a>
+          <a class="btn btn-link" href="irula-tribes-development.html">Irula Tribes Development</a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h2 class="h5 text-light mb-4">Enlight Mission</h2>
+          <p>--Small is beautiful--</p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="copyright">
+        <div class="row">
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+            &copy; <a class="border-bottom" href="index.html">Enlight Mission</a>, All
+            Right Reserved.
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            Designed By
+            <a class="border-bottom" href="https://velstechnologies.in" target="_blank" rel="noopener">Vels Technologies</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer End -->
 
-        <!-- Back to Top -->
+  <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
         <!-- JavaScript Libraries -->
@@ -138,8 +256,6 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
         <script src="lib/wow/wow.min.js"></script>
         <script src="lib/easing/easing.min.js"></script>
-        <script src="lib/waypoints/waypoints.min.js"></script>
-        <script src="lib/counterup/counterup.min.js"></script>
         <script src="lib/owlcarousel/owl.carousel.min.js"></script>
         <script src="lib/lightbox/js/lightbox.min.js"></script>
 

@@ -3,11 +3,23 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Enlight Mission - Gallery</title>
+  <title>Gallery &ndash; Enlight Mission</title>
   <link rel="icon" href="img/logo.jpeg" type="image">
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <meta content="" name="keywords" />
-  <meta content="" name="description" />
+  <meta content="Enlight Mission, Irulight, NGO, Tamil Nadu, Irula, tribal development, women empowerment, Villupuram" name="keywords" />
+  <meta content="Photographs of Enlight Mission’s work with Irula communities in Villupuram district, Tamil Nadu." name="description" />
+
+  <!-- Link previews (Facebook, WhatsApp, LinkedIn).
+       og:image must be an absolute URL once the site has a domain:
+       prefix these paths with https://your-domain/ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Enlight Mission" />
+  <meta property="og:title" content="Gallery &ndash; Enlight Mission" />
+  <meta property="og:description" content="Photographs of Enlight Mission’s work with Irula communities in Villupuram district, Tamil Nadu." />
+  <meta property="og:image" content="img/thumb/gal3.JPG" />
+  <meta property="og:url" content="gallery.html" />
+  <meta property="og:locale" content="en_GB" />
+  <meta name="twitter:card" content="summary_large_image" />
 
   <!-- Favicon -->
   <!-- <link href="img/favicon.ico" rel="icon" /> -->
@@ -17,6 +29,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Quicksand:wght@600;700&display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap"
     rel="stylesheet" />
 
   <!-- Icon Font Stylesheet -->
@@ -33,6 +48,14 @@
 
   <!-- Template Stylesheet -->
   <link href="css/style.css" rel="stylesheet" />
+
+  <!-- Redesign layer. Loads last; remove this one line to revert. -->
+  <link href="css/design.css" rel="stylesheet" />
+
+  <!-- If scripts fail, don't leave the loading overlay covering the page -->
+  <noscript>
+    <style>#spinner { display: none !important; }</style>
+  </noscript>
 </head>
 
 <body>
@@ -45,34 +68,53 @@
   </div>
   <!-- Spinner End -->
 
+  <script>
+    // Clear the loading overlay without waiting for jQuery. If a CDN script
+    // fails, main.js never runs and the overlay would otherwise cover the page.
+    (function () {
+      function clear() {
+        var s = document.getElementById('spinner');
+        if (s) { s.className = s.className.replace(/\bshow\b/, ''); }
+      }
+      document.addEventListener('DOMContentLoaded', clear);
+      window.addEventListener('load', clear);
+      setTimeout(clear, 3000);
+    })();
+  </script>
+
 
 
   <!-- Navbar Start -->
-  <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-lg-0 px-4 px-lg-5 wow fadeIn"
+  <nav class="navbar navbar-expand-xl bg-white navbar-light sticky-top py-xl-0 px-4 px-xl-5 wow fadeIn"
     data-wow-delay="0.1s">
     <a href="index.html" class="navbar-brand p-0">
-      <img class="img-fluid me-3" src="img/logo.jpeg" alt="Icon" />
-      <h1 class="m-0 text-danger">Enlight Mission</h1>
+      <img class="img-fluid me-3" src="img/logo.jpeg" alt="Enlight Mission logo" />
+      <span class="navbar-title m-0">Enlight Mission</span>
     </a>
     <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse py-4 py-lg-0" id="navbarCollapse">
+    <div class="collapse navbar-collapse py-4 py-xl-0" id="navbarCollapse">
       <div class="navbar-nav ms-auto">
         <a href="index.html" class="nav-item nav-link">Home</a>
-        <a href="about.html" class="nav-item nav-link">About</a>
-        <a href="volunteers.html" class="nav-item nav-link">Volunteers</a>
+        <a href="about.html" class="nav-item nav-link">About Us</a>
         <div class="nav-item dropdown">
-          <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Activities</a>
+          <a href="projects.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Our Work &amp; Projects</a>
           <div class="dropdown-menu rounded-0 rounded-bottom m-0">
-            <a href="empowering-women.html" class="dropdown-item">Empowering and Enlighting Women</a>
-            <a href="irula-tribes-development.html" class="dropdown-item">Irula Tripes Developement</a>
-
+            <a href="projects.html" class="dropdown-item">All Projects</a>
+            <a href="empowering-women.html" class="dropdown-item">Empowering and Enlightening Women</a>
+            <a href="irula-tribes-development.html" class="dropdown-item">Irula Tribes Development</a>
           </div>
         </div>
-        <a href="projects.html" class="nav-item nav-link">Projects</a>
+        <a href="resources.html" class="nav-item nav-link">Resources</a>
+        <a href="volunteers.html" class="nav-item nav-link">Volunteer</a>
+        <a href="donate.html" class="nav-item nav-link">Donate</a>
         <a href="gallery.html" class="nav-item nav-link active">Gallery</a>
         <a href="contact.html" class="nav-item nav-link">Contact</a>
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <span class="is-current" aria-current="true" lang="en">EN</span>
+          <a href="about-fr.html" lang="fr">FR</a>
+        </div>
       </div>
     </div>
   </nav>
@@ -87,149 +129,184 @@
     </div>
   </div>
 
-  <!-- Page en français link -->
+  <!-- Photo Grid Start -->
   <div class="container-xxl py-5">
     <div class="container">
-      <div class="row g-5 mb-5 align-items-end wow fadeInUp" data-wow-delay="0.1s">        
-       </div>
-       <style>
-        * {
-          box-sizing: border-box;
-        }
-        
-        body {
-          margin: 0;
-          font-family: Arial;
-        }
-        
-        .header {
-          text-align: center;
-          padding: 32px;
-        }
-        
-        .row {
-          display: -ms-flexbox; /* IE10 */
-          display: flex;
-          -ms-flex-wrap: wrap; /* IE10 */
-          flex-wrap: wrap;
-          padding: 0 4px;
-        }
-        
-        /* Create four equal columns that sits next to each other */
-        .column {
-          -ms-flex: 25%; /* IE10 */
-          flex: 25%;
-          max-width: 25%;
-          padding: 0 4px;
-        }
-        
-        .column img {
-          margin-top: 8px;
-          vertical-align: middle;
-          width: 100%;
-        }
-        
-        /* Responsive layout - makes a two column-layout instead of four columns */
-        @media screen and (max-width: 800px) {
-          .column {
-            -ms-flex: 50%;
-            flex: 50%;
-            max-width: 50%;
-          }
-        }
-        
-        /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-        @media screen and (max-width: 600px) {
-          .column {
-            -ms-flex: 100%;
-            flex: 100%;
-            max-width: 100%;
-          }
-        }
-        </style>
-        <body>                
-        <!-- Photo Grid -->
-        <div class="row" style="height:100%"> 
-          <div class="column" >
-            <img src="img/gal0.JPG" style="width:100%;height: 19%;">
-            <img src="img/gal1.JPG" style="width:100%">
-            <img src="img/gal2.JPG" style="width:100%">
-            <img src="img/gal3.JPG" style="width:100%">
-            <img src="img/gal4.JPG" style="width:100%">
-            <img src="img/gal5.JPG" style="width:100%">
-            <img src="img/gal6.JPG" style="width:100%">
-            <img src="img/gall1.JPG" style="width:100%">
-            <img src="img/gall2.JPG" style="width:100%;height: 11%;">
-          </div>
-          <div class="column">
-            <img src="img/about1st.png" style="width:100%;height: 17%;">
-            <img src="img/house4.JPG" style="width:100%">
-            <img src="img/house2.JPG" style="width:100%">
-            <img src="img/grid1.JPG" style="width:100%">
-            <img src="img/grid2.JPG" style="width:100%">
-            <img src="img/grid3.jpg" style="width:100%">
-            <img src="img/grid4.jpg" style="width:100%">
-            <img src="img/gall3.JPG" style="width:100%">
-            <img src="img/gall6.JPG" style="width:100%;height: 12%;">
-          </div>  
-          <div class="column">
-            <img src="img/grid5.JPG" style="width:100%">
-            <img src="img/grid6.JPG" style="width:100%">
-            <img src="img/grid7.JPG" style="width:100%">
-            <img src="img/grid8.JPG" style="width:100%">
-            <img src="img/grid9.JPG" style="width:100%">
-            <img src="img/grid10.JPG" style="width:100%">
-            <img src="img/grid11.jpg" style="width:100%">
-            <img src="img/gall4.JPG" style="width:100%">
-            <img src="img/gall7.JPG" style="width:100%;height: 14%;">
-          </div>
-          <div class="column">
-            <img src="img/grid16.jpg" style="width:100%">
-            <img src="img/grid13.jpg" style="width:100%;height: 16%;">
-            <img src="img/grid14.JPG" style="width:100%">
-            <img src="img/grid17.JPG" style="width:100%">
-            <img src="img/goat7.JPG" style="width:100%">
-            <img src="img/house6.JPG" style="width:100%">
-            <img src="img/goat4.JPG" style="width:100%">
-            <img src="img/gall5.JPG" style="width:100%">
-            <img src="img/gall8.JPG" style="width:100%">
+      <div class="gallery-grid wow fadeInUp" data-wow-delay="0.1s">
+        <a href="img/gal0.JPG" data-lightbox="gallery" data-title="Enlight Mission photo 1">
+          <img src="img/thumb/gal0.JPG" alt="Enlight Mission photo 1" loading="lazy">
+        </a>
+        <a href="img/about1st.png" data-lightbox="gallery" data-title="Enlight Mission photo 2">
+          <img src="img/about1st.png" alt="Enlight Mission photo 2" loading="lazy">
+        </a>
+        <a href="img/grid5.JPG" data-lightbox="gallery" data-title="Enlight Mission photo 3">
+          <img src="img/thumb/grid5.JPG" alt="Enlight Mission photo 3" loading="lazy">
+        </a>
+        <a href="img/grid16.jpg" data-lightbox="gallery" data-title="Enlight Mission photo 4">
+          <img src="img/thumb/grid16.jpg" alt="Enlight Mission photo 4" loading="lazy">
+        </a>
+        <a href="img/gal1.JPG" data-lightbox="gallery" data-title="Enlight Mission photo 5">
+          <img src="img/thumb/gal1.JPG" alt="Enlight Mission photo 5" loading="lazy">
+        </a>
+        <a href="img/house4.JPG" data-lightbox="gallery" data-title="Enlight Mission photo 6">
+          <img src="img/thumb/house4.JPG" alt="Enlight Mission photo 6" loading="lazy">
+        </a>
+        <a href="img/grid6.JPG" data-lightbox="gallery" data-title="Enlight Mission photo 7">
+          <img src="img/thumb/grid6.JPG" alt="Enlight Mission photo 7" loading="lazy">
+        </a>
+        <a href="img/grid13.JPG" data-lightbox="gallery" data-title="Enlight Mission photo 8">
+          <img src="img/thumb/grid13.JPG" alt="Enlight Mission photo 8" loading="lazy">
+        </a>
+        <a href="img/gal2.JPG" data-lightbox="gallery" data-title="Enlight Mission photo 9">
+          <img src="img/thumb/gal2.JPG" alt="Enlight Mission photo 9" loading="lazy">
+        </a>
+        <a href="img/house2.JPG" data-lightbox="gallery" data-title="Enlight Mission photo 10">
+          <img src="img/thumb/house2.JPG" alt="Enlight Mission photo 10" loading="lazy">
+        </a>
+        <a href="img/grid7.JPG" data-lightbox="gallery" data-title="Enlight Mission photo 11">
+          <img src="img/thumb/grid7.JPG" alt="Enlight Mission photo 11" loading="lazy">
+        </a>
+        <a href="img/grid14.JPG" data-lightbox="gallery" data-title="Enlight Mission photo 12">
+          <img src="img/thumb/grid14.JPG" alt="Enlight Mission photo 12" loading="lazy">
+        </a>
+        <a href="img/gal3.JPG" data-lightbox="gallery" data-title="Enlight Mission photo 13">
+          <img src="img/thumb/gal3.JPG" alt="Enlight Mission photo 13" loading="lazy">
+        </a>
+        <a href="img/grid1.JPG" data-lightbox="gallery" data-title="Enlight Mission photo 14">
+          <img src="img/thumb/grid1.JPG" alt="Enlight Mission photo 14" loading="lazy">
+        </a>
+        <a href="img/grid8.JPG" data-lightbox="gallery" data-title="Enlight Mission photo 15">
+          <img src="img/thumb/grid8.JPG" alt="Enlight Mission photo 15" loading="lazy">
+        </a>
+        <a href="img/grid17.JPG" data-lightbox="gallery" data-title="Enlight Mission photo 16">
+          <img src="img/thumb/grid17.JPG" alt="Enlight Mission photo 16" loading="lazy">
+        </a>
+        <a href="img/gal4.JPG" data-lightbox="gallery" data-title="Enlight Mission photo 17">
+          <img src="img/thumb/gal4.JPG" alt="Enlight Mission photo 17" loading="lazy">
+        </a>
+        <a href="img/grid2.JPG" data-lightbox="gallery" data-title="Enlight Mission photo 18">
+          <img src="img/thumb/grid2.JPG" alt="Enlight Mission photo 18" loading="lazy">
+        </a>
+        <a href="img/grid9.JPG" data-lightbox="gallery" data-title="Enlight Mission photo 19">
+          <img src="img/thumb/grid9.JPG" alt="Enlight Mission photo 19" loading="lazy">
+        </a>
+        <a href="img/goat7.JPG" data-lightbox="gallery" data-title="Enlight Mission photo 20">
+          <img src="img/thumb/goat7.JPG" alt="Enlight Mission photo 20" loading="lazy">
+        </a>
+        <a href="img/gal5.JPG" data-lightbox="gallery" data-title="Enlight Mission photo 21">
+          <img src="img/thumb/gal5.JPG" alt="Enlight Mission photo 21" loading="lazy">
+        </a>
+        <a href="img/grid3.jpg" data-lightbox="gallery" data-title="Enlight Mission photo 22">
+          <img src="img/thumb/grid3.jpg" alt="Enlight Mission photo 22" loading="lazy">
+        </a>
+        <a href="img/grid10.JPG" data-lightbox="gallery" data-title="Enlight Mission photo 23">
+          <img src="img/thumb/grid10.JPG" alt="Enlight Mission photo 23" loading="lazy">
+        </a>
+        <a href="img/house6.JPG" data-lightbox="gallery" data-title="Enlight Mission photo 24">
+          <img src="img/thumb/house6.JPG" alt="Enlight Mission photo 24" loading="lazy">
+        </a>
+        <a href="img/gal6.JPG" data-lightbox="gallery" data-title="Enlight Mission photo 25">
+          <img src="img/thumb/gal6.JPG" alt="Enlight Mission photo 25" loading="lazy">
+        </a>
+        <a href="img/grid4.jpg" data-lightbox="gallery" data-title="Enlight Mission photo 26">
+          <img src="img/thumb/grid4.jpg" alt="Enlight Mission photo 26" loading="lazy">
+        </a>
+        <a href="img/grid11.jpg" data-lightbox="gallery" data-title="Enlight Mission photo 27">
+          <img src="img/thumb/grid11.jpg" alt="Enlight Mission photo 27" loading="lazy">
+        </a>
+        <a href="img/goat4.JPG" data-lightbox="gallery" data-title="Enlight Mission photo 28">
+          <img src="img/thumb/goat4.JPG" alt="Enlight Mission photo 28" loading="lazy">
+        </a>
+        <a href="img/gall1.JPG" data-lightbox="gallery" data-title="Enlight Mission photo 29">
+          <img src="img/thumb/gall1.JPG" alt="Enlight Mission photo 29" loading="lazy">
+        </a>
+        <a href="img/gall3.JPG" data-lightbox="gallery" data-title="Enlight Mission photo 30">
+          <img src="img/thumb/gall3.JPG" alt="Enlight Mission photo 30" loading="lazy">
+        </a>
+        <a href="img/gall4.JPG" data-lightbox="gallery" data-title="Enlight Mission photo 31">
+          <img src="img/thumb/gall4.JPG" alt="Enlight Mission photo 31" loading="lazy">
+        </a>
+        <a href="img/gall5.JPG" data-lightbox="gallery" data-title="Enlight Mission photo 32">
+          <img src="img/thumb/gall5.JPG" alt="Enlight Mission photo 32" loading="lazy">
+        </a>
+        <a href="img/gall2.JPG" data-lightbox="gallery" data-title="Enlight Mission photo 33">
+          <img src="img/thumb/gall2.JPG" alt="Enlight Mission photo 33" loading="lazy">
+        </a>
+        <a href="img/gall6.JPG" data-lightbox="gallery" data-title="Enlight Mission photo 34">
+          <img src="img/thumb/gall6.JPG" alt="Enlight Mission photo 34" loading="lazy">
+        </a>
+        <a href="img/gall7.JPG" data-lightbox="gallery" data-title="Enlight Mission photo 35">
+          <img src="img/thumb/gall7.JPG" alt="Enlight Mission photo 35" loading="lazy">
+        </a>
+        <a href="img/gall8.JPG" data-lightbox="gallery" data-title="Enlight Mission photo 36">
+          <img src="img/thumb/gall8.JPG" alt="Enlight Mission photo 36" loading="lazy">
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- Photo Grid End -->
+
+  <!-- Footer Start -->
+  <div class="container-fluid footer bg-dark text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+      <div class="row g-5">
+        <div class="col-lg-3 col-md-6">
+          <h2 class="h5 text-light mb-4">Address</h2>
+          <p class="mb-2">
+            <i class="fa fa-map-marker-alt me-3"></i>No1/118, Agragaram st., Aalampoondi, Villupuram
+          </p>
+          <p class="mb-2">
+            <i class="fa fa-phone-alt me-3"></i>+91 9442286290
+          </p>
+          <p class="mb-2">
+            <i class="fa fa-envelope me-3"></i>irulightassociation@gmail.com
+          </p>
+          <div class="d-flex pt-2">
+            <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/irulightassociation"
+              target="_blank" rel="noopener" aria-label="Enlight Mission on Facebook"><i class="fab fa-facebook-f"></i></a>
           </div>
         </div>
-        
+        <div class="col-lg-3 col-md-6">
+          <h2 class="h5 text-light mb-4">Quick Links</h2>
+          <a class="btn btn-link" href="index.html">Home</a>
+          <a class="btn btn-link" href="about.html">About Us</a>
+          <a class="btn btn-link" href="projects.html">Our Work &amp; Projects</a>
+          <a class="btn btn-link" href="volunteers.html">Volunteer</a>
+          <a class="btn btn-link" href="contact.html">Contact Us</a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h2 class="h5 text-light mb-4">Popular Links</h2>
+          <a class="btn btn-link" href="resources.html">Resources</a>
+          <a class="btn btn-link" href="donate.html">Donate</a>
+          <a class="btn btn-link" href="gallery.html">Gallery</a>
+          <a class="btn btn-link" href="donate.html">Support our work</a>
+          <a class="btn btn-link" href="empowering-women.html">Empowering Women</a>
+          <a class="btn btn-link" href="irula-tribes-development.html">Irula Tribes Development</a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h2 class="h5 text-light mb-4">Enlight Mission</h2>
+          <p>--Small is beautiful--</p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="copyright">
+        <div class="row">
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+            &copy; <a class="border-bottom" href="index.html">Enlight Mission</a>, All
+            Right Reserved.
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            Designed By
+            <a class="border-bottom" href="https://velstechnologies.in" target="_blank" rel="noopener">Vels Technologies</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer End -->
 
-
-            <!-- <script>
-
-              let slideIndex = 1;
-              showSlides(slideIndex);
-
-              function plusSlides(n) {
-                showSlides(slideIndex += n);
-              }
-
-              function currentSlide(n) {
-                showSlides(slideIndex = n);
-              }
-
-              function showSlides(n) {
-                let i;
-                let slides = document.getElementsByClassName("mySlides");
-                let dots = document.getElementsByClassName("demo");
-                let captionText = document.getElementById("caption");
-                if (n > slides.length) { slideIndex = 1 }
-                if (n < 1) { slideIndex = slides.length }
-                for (i = 0; i < slides.length; i++) {
-                  slides[i].style.display = "none";
-                }
-                for (i = 0; i < dots.length; i++) {
-                  dots[i].className = dots[i].className.replace(" active", "");
-                }
-                slides[slideIndex - 1].style.display = "block";
-                dots[slideIndex - 1].className += " active";
-                captionText.innerHTML = dots[slideIndex - 1].alt;
-              }
-            </script> -->
-            <!-- Back to Top -->
+  <!-- Back to Top -->
             <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
             <!-- JavaScript Libraries -->
@@ -237,8 +314,6 @@
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
             <script src="lib/wow/wow.min.js"></script>
             <script src="lib/easing/easing.min.js"></script>
-            <script src="lib/waypoints/waypoints.min.js"></script>
-            <script src="lib/counterup/counterup.min.js"></script>
             <script src="lib/owlcarousel/owl.carousel.min.js"></script>
             <script src="lib/lightbox/js/lightbox.min.js"></script>
 

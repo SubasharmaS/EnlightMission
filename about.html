@@ -3,11 +3,25 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>About-Enlight Mission</title>
+  <title>About Us &ndash; Enlight Mission</title>
   <link rel="icon" href="img/logo.jpeg" type="image">
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <meta content="" name="keywords" />
-  <meta content="" name="description" />
+  <meta content="Enlight Mission, Irulight, NGO, Tamil Nadu, Irula, tribal development, women empowerment, Villupuram" name="keywords" />
+  <meta content="Who we are: Enlight Mission, our founder Albert Velankanni, and our partnership with the Rakhi Foundation." name="description" />
+
+  <!-- Link previews (Facebook, WhatsApp, LinkedIn).
+       og:image must be an absolute URL once the site has a domain:
+       prefix these paths with https://your-domain/ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Enlight Mission" />
+  <meta property="og:title" content="About Us &ndash; Enlight Mission" />
+  <meta property="og:description" content="Who we are: Enlight Mission, our founder Albert Velankanni, and our partnership with the Rakhi Foundation." />
+  <meta property="og:image" content="img/irula-woman.jpg" />
+  <meta property="og:url" content="about.html" />
+  <meta property="og:locale" content="en_GB" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="alternate" hreflang="fr" href="about-fr.html" />
+  <link rel="alternate" hreflang="en" href="about.html" />
 
   <!-- Favicon -->
   <!-- <link href="img/favicon.ico" rel="icon" /> -->
@@ -17,6 +31,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500&family=Quicksand:wght@600;700&display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap"
     rel="stylesheet" />
 
   <!-- Icon Font Stylesheet -->
@@ -33,6 +50,14 @@
 
   <!-- Template Stylesheet -->
   <link href="css/style.css" rel="stylesheet" />
+
+  <!-- Redesign layer. Loads last; remove this one line to revert. -->
+  <link href="css/design.css" rel="stylesheet" />
+
+  <!-- If scripts fail, don't leave the loading overlay covering the page -->
+  <noscript>
+    <style>#spinner { display: none !important; }</style>
+  </noscript>
 </head>
 
 <body>
@@ -45,34 +70,53 @@
   </div>
   <!-- Spinner End -->
 
+  <script>
+    // Clear the loading overlay without waiting for jQuery. If a CDN script
+    // fails, main.js never runs and the overlay would otherwise cover the page.
+    (function () {
+      function clear() {
+        var s = document.getElementById('spinner');
+        if (s) { s.className = s.className.replace(/\bshow\b/, ''); }
+      }
+      document.addEventListener('DOMContentLoaded', clear);
+      window.addEventListener('load', clear);
+      setTimeout(clear, 3000);
+    })();
+  </script>
+
 
 
   <!-- Navbar Start -->
-  <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-lg-0 px-4 px-lg-5 wow fadeIn"
+  <nav class="navbar navbar-expand-xl bg-white navbar-light sticky-top py-xl-0 px-4 px-xl-5 wow fadeIn"
     data-wow-delay="0.1s">
     <a href="index.html" class="navbar-brand p-0">
-      <img class="img-fluid me-3" src="img/logo.jpeg" alt="Icon" />
-      <h1 class="m-0 text-danger">Enlight Mission</h1>
+      <img class="img-fluid me-3" src="img/logo.jpeg" alt="Enlight Mission logo" />
+      <span class="navbar-title m-0">Enlight Mission</span>
     </a>
     <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse py-4 py-lg-0" id="navbarCollapse">
+    <div class="collapse navbar-collapse py-4 py-xl-0" id="navbarCollapse">
       <div class="navbar-nav ms-auto">
         <a href="index.html" class="nav-item nav-link">Home</a>
-        <a href="about.html" class="nav-item nav-link active">About</a>
-        <a href="volunteers.html" class="nav-item nav-link">Volunteers</a>
+        <a href="about.html" class="nav-item nav-link active">About Us</a>
         <div class="nav-item dropdown">
-          <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Activities</a>
+          <a href="projects.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Our Work &amp; Projects</a>
           <div class="dropdown-menu rounded-0 rounded-bottom m-0">
-            <a href="empowering-women.html" class="dropdown-item">Empowering and Enlighting Women</a>
-            <a href="irula-tribes-development.html" class="dropdown-item">Irula Tripes Developement</a>
-
+            <a href="projects.html" class="dropdown-item">All Projects</a>
+            <a href="empowering-women.html" class="dropdown-item">Empowering and Enlightening Women</a>
+            <a href="irula-tribes-development.html" class="dropdown-item">Irula Tribes Development</a>
           </div>
         </div>
-        <a href="projects.html" class="nav-item nav-link">Projects</a>
-		 <a href="gallery.html" class="nav-item nav-link">Gallery</a>
+        <a href="resources.html" class="nav-item nav-link">Resources</a>
+        <a href="volunteers.html" class="nav-item nav-link">Volunteer</a>
+        <a href="donate.html" class="nav-item nav-link">Donate</a>
+        <a href="gallery.html" class="nav-item nav-link">Gallery</a>
         <a href="contact.html" class="nav-item nav-link">Contact</a>
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <span class="is-current" aria-current="true" lang="en">EN</span>
+          <a href="about-fr.html" lang="fr">FR</a>
+        </div>
       </div>
     </div>
   </nav>
@@ -85,7 +129,7 @@
 >
   <div class="container py-5">
     <h1 class="display-4 text-white mb-3 animated slideInDown">
-      About Enlight
+      About Us
     </h1>
    
   </div>
@@ -93,28 +137,108 @@
 
   <!-- Header End -->
 
-  <!-- Page en français link -->
+  <!-- Page Content Start -->
   <div class="container-xxl py-5">
     <div class="container">
-      <div
-        class="row g-5 mb-5 align-items-end wow fadeInUp"
-        data-wow-delay="0.1s"
-      >
-        <div class="col-lg-6">
-          <p><span class="text-primary me-2">#</span> <a href="about-fr.html"> Page en français</a></p>
-       </div>
-       <div>
+      <div class="row justify-content-center wow fadeInUp" data-wow-delay="0.1s">
+        <div class="col-12 col-lg-10 page-content">
+          <p class="lang-switch"><span class="text-primary me-2">#</span><a href="about-fr.html">Page en français</a></p>
           <p>
-            <br> Enlight Mission is an NGO based in Tamil Nadu, India, that supports local tribal communities living in poverty. Our mission is to enlight darkness of poverty in Irulas livelihood and support them in building their awareness how to live better.<br>
-            <br> Albert Velankanni is the founder of Enlight. As a lawyer he helps Irulas with legal documents to make them benefit of the government scheme.<br>
-            <br> The <a href="http://rakhifoundation.org/" target="_blank"> Rakhi Foundation</a> founded by Danielle Brochier is our sponsor and partner :
+            Enlight Mission is an NGO based in Tamil Nadu, India, that supports local tribal communities living in poverty. Our mission is to enlight darkness of poverty in Irulas livelihood and support them in building their awareness how to live better.
           </p>
-            <img src="img/about2nd.png">
-            <p>Our priorities are to provide Irulas tribes cast certificates, land grants confirmation and scheme cards.</p>
-     </div>
-       <!-- Page en français link -->
+          <p>
+            Albert Velankanni is the founder of Enlight. As a lawyer he helps Irulas with legal documents to make them benefit of the government scheme.
+          </p>
+          <p>
+            The <a href="http://rakhifoundation.org/" target="_blank" rel="noopener">Rakhi Foundation</a> founded by Danielle Brochier is our sponsor and partner :
+          </p>
 
-  
+          <section class="team">
+            <h2>Who are we &mdash; Irulight Assotiation Team</h2>
+            <ul class="team-list">
+              <li>
+                <span class="team-name">Danielle</span>
+                <span class="team-role">Sponsor &amp; Partner</span>
+              </li>
+              <li>
+                <span class="team-name">Albert</span>
+                <span class="team-role">Founder &amp; Partner</span>
+              </li>
+              <li>
+                <span class="team-name">Fatima</span>
+                <span class="team-role">Tailoring teacher</span>
+              </li>
+            </ul>
+            <p class="team-vols"><span class="team-vols-label">Supported by </span>International volunteers &middot; Indian volunteers</p>
+          </section>
+
+          <p>Our priorities are to provide Irulas tribes cast certificates, land grants confirmation and scheme cards.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Page Content End -->
+
+  <!-- Footer Start -->
+  <div class="container-fluid footer bg-dark text-light footer mt-5 pt-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container py-5">
+      <div class="row g-5">
+        <div class="col-lg-3 col-md-6">
+          <h2 class="h5 text-light mb-4">Address</h2>
+          <p class="mb-2">
+            <i class="fa fa-map-marker-alt me-3"></i>No1/118, Agragaram st., Aalampoondi, Villupuram
+          </p>
+          <p class="mb-2">
+            <i class="fa fa-phone-alt me-3"></i>+91 9442286290
+          </p>
+          <p class="mb-2">
+            <i class="fa fa-envelope me-3"></i>irulightassociation@gmail.com
+          </p>
+          <div class="d-flex pt-2">
+            <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/irulightassociation"
+              target="_blank" rel="noopener" aria-label="Enlight Mission on Facebook"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h2 class="h5 text-light mb-4">Quick Links</h2>
+          <a class="btn btn-link" href="index.html">Home</a>
+          <a class="btn btn-link" href="about.html">About Us</a>
+          <a class="btn btn-link" href="projects.html">Our Work &amp; Projects</a>
+          <a class="btn btn-link" href="volunteers.html">Volunteer</a>
+          <a class="btn btn-link" href="contact.html">Contact Us</a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h2 class="h5 text-light mb-4">Popular Links</h2>
+          <a class="btn btn-link" href="resources.html">Resources</a>
+          <a class="btn btn-link" href="donate.html">Donate</a>
+          <a class="btn btn-link" href="gallery.html">Gallery</a>
+          <a class="btn btn-link" href="donate.html">Support our work</a>
+          <a class="btn btn-link" href="empowering-women.html">Empowering Women</a>
+          <a class="btn btn-link" href="irula-tribes-development.html">Irula Tribes Development</a>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h2 class="h5 text-light mb-4">Enlight Mission</h2>
+          <p>--Small is beautiful--</p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="copyright">
+        <div class="row">
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+            &copy; <a class="border-bottom" href="index.html">Enlight Mission</a>, All
+            Right Reserved.
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            Designed By
+            <a class="border-bottom" href="https://velstechnologies.in" target="_blank" rel="noopener">Vels Technologies</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer End -->
+
   <!-- Back to Top -->
   <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 
@@ -123,8 +247,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="lib/wow/wow.min.js"></script>
   <script src="lib/easing/easing.min.js"></script>
-  <script src="lib/waypoints/waypoints.min.js"></script>
-  <script src="lib/counterup/counterup.min.js"></script>
   <script src="lib/owlcarousel/owl.carousel.min.js"></script>
   <script src="lib/lightbox/js/lightbox.min.js"></script>
 
